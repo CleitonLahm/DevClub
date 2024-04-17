@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+}
+
+.logo-image {
+  width: 568px;
+  height: 500px;
+  margin-left: 125px;
+  margin-right: 86px;
+}
+
+header {
+  margin: 44px 0 144px 76px;
+}
+
+.link-header {
+  color: #989D9C;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  cursor: pointer;
+  margin-right: 23px;
+}
+
+.login-button {
+  background: #665AE1;
+  border-radius: 20.5px;
+  width: 130px;
+  height: 42px;
+  border: none;
+  line-height: 29px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.main-content {
+  display: flex;
+}
+
+h1 {
+  font-size: 100px;
+  font-weight: 900;
+  line-height: 121.9px;
+  text-align: left;
+  color: #515151;
+}
+
+h2 {
+  font-size: 58px;
+  font-weight: 500;
+  line-height: 70.7px;
+  text-align: left;
+  margin-bottom: 32px;
+  color: #515151;
+}
+
+p {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29.26px;
+  text-align: left;
+  margin-bottom: 65px;
+  color: #848484;
+  width: 515px;
+}
+
+.main-button {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 34.13px;
+  text-align: left;
+  text-align: center;
+
+  background-color: #ADFF00;
+  width: 239px;
+  height: 64px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
