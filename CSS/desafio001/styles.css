@@ -62,3 +62,48 @@ p {
   line-height: 27px;
   color: #6FBF44;
 }
+
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    justify-content: flex-end;
+    margin: 16px;
+  }
+
+  .link-header {
+    display: none;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    margin: 0 44px;
+  }
+
+  img {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  h1 {
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+    width: 280px;
+  }
+
+  p {
+    width: 304px;
+    text-align: center;
+  }
+
+}
