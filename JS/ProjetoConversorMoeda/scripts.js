@@ -10,8 +10,15 @@ function convertValues() {
   const dolarToday = 5.2
   const convertedValue = inputValue / dolarToday
 
-  initialValue.innerHTML = inputValue
-  finalValue.innerHTML = convertedValue
+  initialValue.innerHTML = new Intl.NumberFormat("pr-BR", {
+    style: "currency", 
+    currency: "BRL"
+  }).format(inputValue)
+
+  finalValue.innerHTML = new Intl.NumberFormat("en-US", {
+    style: "currency", 
+    currency: "USD"
+  }).format(convertedValue)
   
 
 }
