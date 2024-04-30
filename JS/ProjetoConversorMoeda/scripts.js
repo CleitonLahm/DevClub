@@ -33,15 +33,15 @@ function changeCurrency() {
   const currencyImg = document.querySelector(".currency-img");
 
   if (currencySelect.value == "dolar") {
-    currencyName.innerHTML = "Dólar americano"
-    currencyImg.src = './assets/dolar.svg'
+    currencyName.innerHTML = "Dólar americano";
+    currencyImg.src = "./assets/dolar.svg";
   }
   if (currencySelect.value == "euro") {
-    currencyName.innerHTML = "Euro"
-    currencyImg.src = './assets/euro.svg'
+    currencyName.innerHTML = "Euro";
+    currencyImg.src = "./assets/euro.svg";
   }
 
-  convertValues()
+  convertValues();
 }
 
 currencySelect.addEventListener("change", changeCurrency);
