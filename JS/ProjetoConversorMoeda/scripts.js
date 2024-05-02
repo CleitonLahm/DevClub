@@ -8,6 +8,8 @@ function convertValues() {
 
   const dolarToday = 5.2;
   const euroToday = 6.2;
+  const libraToday = 6;
+  const bitcoinToday = 300000;
 
   if (currencySelect.value == "dolar") {
     finalValue.innerHTML = new Intl.NumberFormat("en-US", {
@@ -22,7 +24,21 @@ function convertValues() {
     }).format(inputValue / euroToday);
   }
 
-  initialValue.innerHTML = new Intl.NumberFormat("pr-BR", {
+  if (currencySelect.value == "libra") {
+    finalValue.innerHTML = new Intl.NumberFormat("en-GB", {
+      style: "currency",
+      currency: "GBP",
+    }).format(inputValue / libraToday);
+  }
+
+  if (currencySelect.value == "bitcoin") {
+    finalValue.innerHTML = new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BTC",
+    }).format(inputValue / bitcoinToday);
+  }
+
+  initialValue.innerHTML = new Intl.NumberFormat("pt-BR", {
     style: "currency",
     currency: "BRL",
   }).format(inputValue);
@@ -39,6 +55,16 @@ function changeCurrency() {
   if (currencySelect.value == "euro") {
     currencyName.innerHTML = "Euro";
     currencyImg.src = "./assets/euro.svg";
+  }
+
+  if (currencySelect.value == "bitcoin") {
+    currencyName.innerHTML = "Bitcoin";
+    currencyImg.src = "./assets/bitcoin.svg";
+  }
+
+  if (currencySelect.value == "libra") {
+    currencyName.innerHTML = "Libra";
+    currencyImg.src = "./assets/libra.svg";
   }
 
   convertValues();
