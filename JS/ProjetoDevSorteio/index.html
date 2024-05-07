@@ -16,10 +16,12 @@
       <img src="assets/dado.svg" alt="imagem de um dado">
         <h4>Sortear um número</h4>
         <div class="inputs">
-          <input type="text" placeholder="entre">
-          <input type="text" placeholder="e">
+          <input class="input-min" type="number" placeholder="entre">
+          <input class="input-max" type="number" placeholder="e">
         </div>
-        <button>Sortear</button>
+        <button onclick="generateNumber()">Sortear</button>
     </div>
+
+    <script src="scripts.js"></script>
   </body>
 </html>
