@@ -9,7 +9,7 @@
 
   <input placeholder="Digite o nome do contato">
   <p></p>
-  <button>Procurar contato</button>
+  <button onclick="search()">Procurar contato</button>
 
 </body>
   <script>
@@ -20,9 +20,21 @@
     const contacts = [
       {name: 'Rodolfo', number: '(49) 99111-1111'},
       {name: 'Paulo', number: '(49) 99199-9999'},
-      {name: 'Rodolfo', number: '(49) 99141-6666'},
-      {name: 'Rodolfo', number: '(49) 99131-4444'}
+      {name: 'Cleiton', number: '(49) 99141-6666'},
+      {name: 'Marcos', number: '(49) 99131-4444'}
     ]
+
+    function search() {
+      for(let i = 0; i < contacts.length; i++) {
+        if(input.value.toLocaleLowerCase() === contacts[i].name.toLocaleLowerCase()) {
+          p.innerHTML = `Contato encontrado <br> Nome: ${contacts[i].name} <br> Telefone: ${contacts[i].number}`
+
+          break
+        } else {
+          p.innerHTML = "Contato não encontrado"
+        }
+      }
+    }
 
   </script>
 </html>
