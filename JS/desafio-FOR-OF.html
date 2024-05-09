@@ -29,7 +29,9 @@
       for(const contact of contacts) {
         if(input.value.toLocaleLowerCase() === contact.name.toLocaleLowerCase()) {
           p.innerHTML = `Contato encontrado <br> Nome: ${contact.name} <br> Telefone: ${contact.number}`
+
           break
+          
         } else {
           p.innerHTML = "Contato não encontrado"
         }
