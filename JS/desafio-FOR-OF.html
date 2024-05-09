@@ -26,10 +26,9 @@
 
     function search() {
       
-      for(let i = 0; i < contacts.length; i++) {
-        if(input.value.toLocaleLowerCase() === contacts[i].name.toLocaleLowerCase()) {
-          p.innerHTML = `Contato encontrado <br> Nome: ${contacts[i].name} <br> Telefone: ${contacts[i].number}`
-
+      for(const contact of contacts) {
+        if(input.value.toLocaleLowerCase() === contact.name.toLocaleLowerCase()) {
+          p.innerHTML = `Contato encontrado <br> Nome: ${contact.name} <br> Telefone: ${contact.number}`
           break
         } else {
           p.innerHTML = "Contato não encontrado"
