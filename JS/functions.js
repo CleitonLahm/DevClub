@@ -1,11 +1,17 @@
-function soma(value, value1) {
-  console.log(value + value1)
+const cart = [10, 290, 23, 18, 43, 50]
+
+let finalValue = 0
+
+function calculateDiscount(value, discount) {
+  if(value > 30) {
+    value * discount / 100
+  } else {
+    value
+  }
 }
 
-soma(10, 20)
+cart.forEach(value => {
 
-function sub(value, value1) {
-  console.log(value - value1)
-}
-
-sub(10, 6)
+  finalValue =+ value
+  console.log(finalValue)
+});
