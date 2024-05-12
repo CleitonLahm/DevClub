@@ -1,21 +1,28 @@
-const cart = [10, 290, 23, 18, 43, 50];
+const cart = [10, 259, 35, 60, 90, 25]
 
-let finalValue = 0;
+function calculateTotalCart() {
+  let total = 0
 
-function calculateDiscount(price, discount) {
-  const result = (price * discount) / 100;
-  return result;
+  cart.forEach(value => {
+    total += value
+  });
+  return total
 }
-calculateDiscount(50, 10);
+function calculateTotalWithDiscount() {
+  let totalWithDiscount = 0
 
-cart.forEach((value) => {
-  const discount = calculateDiscount(value, 10);
-  if (value > 30) {
-    finalValue = finalValue + (value - discount);
-    console.log(finalValue);
-  } else {
+  cart.forEach(value => {
+    if(value > 30) {
+      totalWithDiscount += value * 0.9
+    } else {
+      totalWithDiscount += value
+    }
+  });
+  return totalWithDiscount
+}
 
-    finalValue =+ value 
-  }
+const total = calculateTotalCart(cart)
+console.log(total)
 
-});
+const totalWithDiscount = calculateTotalWithDiscount(cart)
+console.log(totalWithDiscount)
