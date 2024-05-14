@@ -8,7 +8,7 @@ function calculateTotalCart() {
   let totalValue = 0;
 
   cart.forEach((value) => {
-    value + value;
+    totalValue += value
   });
   return totalValue;
 }
@@ -25,4 +25,4 @@ function calculateTotalCartWithDiscount() {
   return totalValue;
 }
 
-console.log(``);
+console.log(`O valor total da sua compra foi de R$ ${calculateTotalCart()}, porém você recebeu 10% de desconto nos itens acima de R$ 30,00, seu preço final é de R$ ${calculateTotalCartWithDiscount()}`)
