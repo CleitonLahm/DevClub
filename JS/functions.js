@@ -25,4 +25,4 @@ function calculateTotalCartWithDiscount() {
   return totalValue;
 }
 
-console.log(`O valor total da sua compra foi de R$ ${calculateTotalCart()}, porém você recebeu 10% de desconto nos itens acima de R$ 30,00, seu preço final é de R$ ${calculateTotalCartWithDiscount()}`)
+console.log(`O valor total da sua compra foi de R$ ${calculateTotalCart().toFixed(2)}, porém você recebeu 10% de desconto nos itens acima de R$ 30,00, seu preço final é de R$ ${calculateTotalCartWithDiscount().toFixed(2)}, você economizou R$ ${(calculateTotalCart() - calculateTotalCartWithDiscount()).toFixed(2)}`);
