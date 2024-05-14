@@ -1,28 +1,28 @@
-const cart = [10, 259, 35, 60, 90, 25]
+const cart = [10, 259, 35, 60, 90, 25];
+
+function calculateDiscount(value) {
+  return value * 0.9;
+}
 
 function calculateTotalCart() {
-  let total = 0
+  let totalValue = 0;
 
-  cart.forEach(value => {
-    total += value
+  cart.forEach((value) => {
+    value + value;
   });
-  return total
+  return totalValue;
 }
-function calculateTotalWithDiscount() {
-  let totalWithDiscount = 0
 
-  cart.forEach(value => {
-    if(value > 30) {
-      totalWithDiscount += value * 0.9
-    } else {
-      totalWithDiscount += value
+function calculateTotalCartWithDiscount() {
+  let totalValue = 0;
+
+  cart.forEach((value) => {
+    if (value > 30) {
+      value = calculateDiscount(value);
     }
+    totalValue += value;
   });
-  return totalWithDiscount
+  return totalValue;
 }
 
-const total = calculateTotalCart(cart)
-console.log(total)
-
-const totalWithDiscount = calculateTotalWithDiscount(cart)
-console.log(totalWithDiscount)
+console.log(``);
