@@ -49,3 +49,26 @@ const companiesAtt2 = companies
   .reduce( (acc, company) => acc + company.marketValue, 0 );
 
 console.log(companiesAtt2.toFixed(2));
+
+
+//-----------OUTRO MODO AINDA MAIS SIMPLIFICADO----------------
+
+const add10Percent = (company) => {
+  company.marketValue = company.marketValue * 1.1
+  return company
+}
+
+const filterCompanies = (company) => {
+  return company.foundedOn < 1990
+}
+
+const calculateTotalMarketValue = (acc, company) => { 
+  return acc + company.marketValue
+}
+
+const marketValueOldCompanies = companies
+.map(add10Percent)
+.filter(filterCompanies)
+.reduce(calculateTotalMarketValue, 0)
+
+console.log(marketValueOldCompanies.toFixed(2))
