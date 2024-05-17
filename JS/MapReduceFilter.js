@@ -18,7 +18,7 @@ const companies = [
 ];
 
 const companiesAtt = companies.map((company) => {
-  company.marketValue = (company.marketValue * 1.1)
+  company.marketValue = company.marketValue * 1.1;
   return company;
 });
 
@@ -32,43 +32,65 @@ const totalValuecompanysBeforeNinety = companiesFoundedBeforeNinety
   }, 0)
   .toFixed(2);
 
-  console.log(
-    `O valor de mercado das empresas foi atualizado e o filtro pegando empresas fundadas antes de 1990 foi aplicado, somando todo o valor de mercado dessas empresas filtradas chegamos ao valor de R$ ${totalValuecompanysBeforeNinety}`
-  );
-
+// console.log(
+//   `O valor de mercado das empresas foi atualizado e o filtro pegando empresas fundadas antes de 1990 foi aplicado, somando todo o valor de mercado dessas empresas filtradas chegamos ao valor de R$ ${totalValuecompanysBeforeNinety}`
+// );
 
 //-----------MODO QUE O PROF FEZ, MAIS SIMPLES E CURTO----------------
 
-
 const companiesAtt2 = companies
   .map((company) => {
-    company.marketValue = (company.marketValue * 1.1)
-    return company
+    company.marketValue = company.marketValue * 1.1;
+    return company;
   })
   .filter((company) => company.foundedOn < 1990)
-  .reduce( (acc, company) => acc + company.marketValue, 0 );
+  .reduce((acc, company) => acc + company.marketValue, 0);
 
-console.log(companiesAtt2.toFixed(2));
+// console.log(companiesAtt2.toFixed(2));
 
-
-//-----------OUTRO MODO AINDA MAIS SIMPLIFICADO----------------
+//--------OUTRO MODO AINDA MAIS SIMPLIFICADO--------------
 
 const add10Percent = (company) => {
-  company.marketValue = company.marketValue * 1.1
-  return company
-}
+  company.marketValue = company.marketValue * 1.1;
+  return company;
+};
 
 const filterCompanies = (company) => {
-  return company.foundedOn < 1990
+  return company.foundedOn < 1990;
+};
+
+const calculateTotalMarketValue = (acc, company) => {
+  return acc + company.marketValue;
+};
+
+const marketValueOldCompanies = companies
+  .map(add10Percent)
+  .filter(filterCompanies)
+  .reduce(calculateTotalMarketValue, 0);
+
+// console.log(marketValueOldCompanies.toFixed(2))
+
+// -----------------DESAFIO----------------------------
+
+// SUBTRAIR 10% DE VALOR DE MERCADO A TODAS AS COMPANHIAS
+// FILTRAR SOMENTE COMPANHIAS FUNDADAS DEPOIS DE 1980
+// SOMAR O VALOR DE MERCADO DAS RESTANTES
+
+const subtract10Percent = (company) => {
+  company.marketValue = Number((company.marketValue * 0.9).toFixed(2));
+  return company;
 }
 
-const calculateTotalMarketValue = (acc, company) => { 
+const companiesAfter1980Filter = (company) => {
+  return company.foundedOn > 1980 
+}
+
+const totalValueCompaniesAfter1980 = (acc, company) => {
   return acc + company.marketValue
 }
 
-const marketValueOldCompanies = companies
-.map(add10Percent)
-.filter(filterCompanies)
-.reduce(calculateTotalMarketValue, 0)
+const companiesFoundedAfter1980 = companies.map(subtract10Percent)
+.filter(companiesAfter1980Filter)
+.reduce(totalValueCompaniesAfter1980, 0)
 
-console.log(marketValueOldCompanies.toFixed(2))
+console.log(companiesFoundedAfter1980);
