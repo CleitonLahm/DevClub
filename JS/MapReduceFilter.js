@@ -79,18 +79,32 @@ const marketValueOldCompanies = companies
 const subtract10Percent = (company) => {
   company.marketValue = Number((company.marketValue * 0.9).toFixed(2));
   return company;
-}
+};
 
 const companiesAfter1980Filter = (company) => {
-  return company.foundedOn > 1980 
-}
+  return company.foundedOn > 1980;
+};
 
 const totalValueCompaniesAfter1980 = (acc, company) => {
-  return acc + company.marketValue
-}
+  return acc + company.marketValue;
+};
 
-const companiesFoundedAfter1980 = companies.map(subtract10Percent)
-.filter(companiesAfter1980Filter)
-.reduce(totalValueCompaniesAfter1980, 0)
+const companiesFoundedAfter1980 = companies
+  .map(subtract10Percent)
+  .filter(companiesAfter1980Filter)
+  .reduce(totalValueCompaniesAfter1980, 0);
 
-console.log(companiesFoundedAfter1980);
+// console.log(companiesFoundedAfter1980);
+
+
+//-------- DESAFIO USANDO OUTRO METODO ------
+
+const totalValueCompaniesAfter1980OtherMode = companies
+  .map((company) => {
+    company.marketValue = company.marketValue * 0.9
+    return company;
+  })
+  .filter((company) => company.foundedOn > 1980)
+  .reduce((acc, company) => acc + company.marketValue, 0);
+
+console.log(totalValueCompaniesAfter1980OtherMode.toFixed(2));
