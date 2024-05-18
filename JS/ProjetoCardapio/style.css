@@ -63,3 +63,11 @@ p {
   font-weight: bold;
   color: #79cb15;
 }
+
+.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
